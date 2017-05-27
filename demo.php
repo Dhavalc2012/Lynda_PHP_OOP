@@ -23,5 +23,12 @@ $address->postal_code = '12233';
 $address->country_name = 'UK';
 var_dump($address);
 
+
+//Displaying Aaddress
 echo '<h2>Displaying the Address</h2>';
+echo $address->display();
+
+echo '<h2> Testing the magic method __get and __set';
+unset($address->postal_code);
+$address->postal_code = '';
 echo $address->display();
