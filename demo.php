@@ -32,3 +32,15 @@ echo '<h2> Testing the magic method __get and __set';
 unset($address->postal_code);
 $address->postal_code = '';
 echo $address->display();
+
+
+echo '<h2> Testing __construct with the Address </h2>';
+$address2 = new Address([
+    'street_address_1' => '123 LinkedIn Avenue NY',
+    'city' => 'Mew York',
+    'subdivision_name' => 'State',
+    'postal_code' => '999',
+    'country_name' => 'Canada'
+]);
+
+echo $address2->display();

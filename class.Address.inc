@@ -35,6 +35,27 @@ class Address {
     //When the record was last created and updated
     protected $_time_created;
     protected $_time_updated;
+    
+    /*
+     * Constructor
+     * @param type array @data. Optional array of property names and values.
+     */
+    public function __construct($data = array()) {
+        $this->_time_created = time();
+        //Ensure that the Address can be populated. Just a sanity check.
+        if(!is_array($data))
+            trigger_error ("Unable to construct address with a" . get_class($name));
+        if(count($data) > 0 ){
+            foreach ($data as $name => $value){
+                //Special case for protected properties.
+                if(in_array($name, array('time_created','time_updated'))){
+                $name = '_' . $name;
+            }
+            $this->$name = $value;
+        }
+            
+    }
+    }
 
     /*Magic __get
      * @param string @name
