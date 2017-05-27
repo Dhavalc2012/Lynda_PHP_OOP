@@ -44,3 +44,7 @@ $address2 = new Address([
 ]);
 
 echo $address2->display();
+
+echo '<h2> Testing of the __toString Method </h2>';
+
+echo $address2;

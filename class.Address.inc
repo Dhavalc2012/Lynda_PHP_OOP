@@ -93,6 +93,10 @@ class Address {
         
     }
     
+    public function __toString() {
+        return $this->display();
+    }
+    
     /*
      * Guess the postal code given and the subdivision.
      * @todo    Replace with database postal lookup.
