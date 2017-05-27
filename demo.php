@@ -48,3 +48,6 @@ echo $address2->display();
 echo '<h2> Testing of the __toString Method </h2>';
 
 echo $address2;
+
+echo '<h2> Address types using static property<h2>';
+var_dump(Address::$valid_address_types);

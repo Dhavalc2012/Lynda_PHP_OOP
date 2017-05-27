@@ -16,6 +16,12 @@ class Address {
     public $street_address_1 ;
     public $street_address_2;
     
+    public static $valid_address_types = array(
+        1 => "Residence",
+        2 => "Business",
+        3 => "Park"
+    ); 
+    
     //Name of the city
     public $city;
     
