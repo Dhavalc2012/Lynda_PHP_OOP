@@ -13,13 +13,18 @@
  */
 class Address {
     //put your code here
+    const ADDRESS_TYPE_RESIDENCE = 1;
+    const ADDRESS_TYPE_BUSINESS = 2;
+    const ADDRESS_TYPE_PARK = 3;
+    
+    
     public $street_address_1 ;
     public $street_address_2;
     
     public static $valid_address_types = array(
-        1 => "Residence",
-        2 => "Business",
-        3 => "Park"
+        Address::ADDRESS_TYPE_RESIDENCE => "Residence",
+        Address::ADDRESS_TYPE_BUSINESS => "Business",
+        Address::ADDRESS_TYPE_PARK => "Park"
     ); 
     
     //Name of the city
