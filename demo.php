@@ -21,6 +21,7 @@ $address->city = 'London';
 $address->subdivision_name = 'State';
 $address->postal_code = '12233';
 $address->country_name = 'UK';
+$address->address_type_id = 1;
 var_dump($address);
 
 
@@ -51,3 +52,10 @@ echo $address2;
 
 echo '<h2> Address types using static property<h2>';
 var_dump(Address::$valid_address_types);
+
+echo '<h2> Testing the address type ID validation </h2>';
+for ($id = 0; $id <= 4 ; $id++) {
+    echo "<div> $id :";
+    echo Address::isValidAddressTypeId($id)?"Valid" : "Invalid";
+    echo "</div>";
+}
