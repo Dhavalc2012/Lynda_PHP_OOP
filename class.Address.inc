@@ -11,7 +11,7 @@
  *
  * @author dhaval
  */
-abstract class Address {
+abstract class Address implements Model{
     //put your code here
     const ADDRESS_TYPE_RESIDENCE = 1;
     const ADDRESS_TYPE_BUSINESS = 2;
@@ -181,5 +181,17 @@ abstract class Address {
         }
     }
     
+    
+    /*Load an address */
+    public final static function load($address_id) {
+        
+    }
+    
+    /*
+     * Save an Address
+     */
+    public final function save() {
+        
+    }
 }
 
