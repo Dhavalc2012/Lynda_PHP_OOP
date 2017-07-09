@@ -11,7 +11,7 @@
  *
  * @author dhaval
  */
-class Address {
+abstract class Address {
     //put your code here
     const ADDRESS_TYPE_RESIDENCE = 1;
     const ADDRESS_TYPE_BUSINESS = 2;
@@ -99,11 +99,7 @@ class Address {
      * @return set value
      */
     public function __set($name, $value) {
-        //Only set valid address type id
-        if("address_type_id" == $name){
-            $this->_setAddressTypeId($value);
-            return;
-        }
+
         
         if ("postal_code" == $name) {
             $this->_postal_code = $value;
@@ -118,6 +114,10 @@ class Address {
         return $this->display();
     }
     
+    /*
+     *Force Extending classes to implement init method.Then add the call to initialze at the begining of the construct.
+     *      */
+    abstract protected function _init();
     /*
      * Guess the postal code given and the subdivision.
      * @todo    Replace with database postal lookup.

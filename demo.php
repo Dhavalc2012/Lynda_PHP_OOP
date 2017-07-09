@@ -15,14 +15,14 @@ $address_residence->street_address_1 = '555 Fake Street';
 $address_residence->city = 'Townsville';
 $address_residence->subdivision_name = 'State';
 $address_residence->country_name = 'United States of America';
-$address_residence->address_type_id = 1;
 echo $address_residence;
 
 echo '<h2>Testing Address __construct with an array</h2>';
-$address_2 = new Address(array(
+$address_business = new AddressBusiness(array(
   'street_address_1' => '123 Phony Ave',
   'city' => 'Villageland',
   'subdivision_name' => 'Region',
   'country_name' => 'Canada',
 ));
-echo $address_2;
+echo $address_business;
+echo "<pre>" .var_dump($address_business) ."</pre>";
